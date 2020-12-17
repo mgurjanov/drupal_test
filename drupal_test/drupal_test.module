@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Drupal test module file.
+ *
+ */
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function drupal_test_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'job_node_form') {
+    $node = $form['#node'];
+    if ($node->type == 'job') {
+      if ($node->field_employment_type['und'][0]['value'] == 'freelance') {
+        $form['field_employment_type']['#disabled'] = TRUE;
+      }
+    }
+  }
+}

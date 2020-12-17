@@ -1,0 +1,4 @@
+name = Drupal test
+description = "Provides custom drupal testing functionality."
+package = Custom
+core = 7.x
